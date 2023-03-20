@@ -14,6 +14,10 @@ public class ManualInterventionListener {
 
     @KafkaHandler
     public void handle(IncompleteScrape incompleteScrape) {
+        System.out.println("kafkaMessage: " + incompleteScrape.toString());
         log.info(incompleteScrape.toString());
+        
     }
 }
+
+
