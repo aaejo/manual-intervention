@@ -24,33 +24,6 @@ public class ManualInterventionApplication {
     //}
 
     public static void main(String[] args) {
-        ConfigurableApplicationContext context = SpringApplication.run(ManualInterventionApplication.class, args);
-
-        ManualInterventionTestProducer testProducer = context.getBean(ManualInterventionTestProducer.class);
-
-        // Create test data
-        Institution institution = new Institution("Test University", "hi", "bye", "hello");
-        Profile profile = new Profile("<html>Test</html>", "https://test.university.edu/profile/1", "Computer Science", institution);
-        Reviewer reviewer = new Reviewer("John Doe", "Dr.", "john.doe@test.university.edu", institution, "Computer Science", new String[]{"AI", "ML"});
-        IncompleteScrape.MissingFlags[] missingFlags = {IncompleteScrape.MissingFlags.NAME};
-
-        // Create IncompleteScrape object
-        IncompleteScrape incompleteScrape = new IncompleteScrape(profile, reviewer, missingFlags);
-
-        // Send test message
-        testProducer.send(incompleteScrape);
-        testProducer.send(incompleteScrape);
-        testProducer.send(incompleteScrape);
-        testProducer.send(incompleteScrape);
-        testProducer.send(incompleteScrape);
-        testProducer.send(incompleteScrape);
-        testProducer.send(incompleteScrape);
-        testProducer.send(incompleteScrape);
-        testProducer.send(incompleteScrape);
-        testProducer.send(incompleteScrape);
-        testProducer.send(incompleteScrape);
+        SpringApplication.run(ManualInterventionApplication.class, args);   
     }
-
-    
-
 }
