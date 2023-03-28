@@ -9,11 +9,15 @@ import org.springframework.web.util.HtmlUtils;
 
 import io.github.aaejo.manualintervention.messaging.producer.ReviewersDataProducer;
 import io.github.aaejo.messaging.records.Reviewer;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * CompletedScrapeController
  */
+
+
 @Controller
+@Slf4j
 public class CompletedScrapeController {
     
     private final ReviewersDataProducer reviewersDataProducer;
@@ -24,6 +28,7 @@ public class CompletedScrapeController {
 
 	@MessageMapping("/complete")
 	public void handle(Reviewer reviewer) {
-		
+        log.debug("Sending reviewer object to reviewers-data kafka topic");
+		reviewersDataProducer.send(reviewer);
 	}
 }
