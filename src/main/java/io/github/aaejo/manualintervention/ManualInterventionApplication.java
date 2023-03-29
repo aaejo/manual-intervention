@@ -9,5 +9,4 @@ public class ManualInterventionApplication {
     public static void main(String[] args) {
         SpringApplication.run(ManualInterventionApplication.class, args);
     }
-
 }
