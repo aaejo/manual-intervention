@@ -26,8 +26,7 @@ public class ReviewersDataProducer {
         sendResultFuture.whenComplete((result, ex) -> {
             if (ex == null) {
                 log.debug("Sent: " + reviewer.toString());
-            }
-            else {
+            } else {
                 log.error("Failed to send: " + reviewer.toString(), ex);
             }
         });

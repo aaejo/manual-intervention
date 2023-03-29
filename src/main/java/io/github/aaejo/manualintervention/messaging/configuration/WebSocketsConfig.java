@@ -12,13 +12,13 @@ public class WebSocketsConfig implements WebSocketMessageBrokerConfigurer {
 
 	@Override
 	public void configureMessageBroker(MessageBrokerRegistry config) {
-		config.enableSimpleBroker("/data"); //path where I'm sending (to Alice)
-		config.setApplicationDestinationPrefixes("/app"); //endpoint where I'm recieving from Alice
+		config.enableSimpleBroker("/data"); // path where I'm sending (to Alice)
+		config.setApplicationDestinationPrefixes("/app"); // endpoint where I'm recieving from Alice
 	}
 
 	@Override
 	public void registerStompEndpoints(StompEndpointRegistry registry) {
-		registry.addEndpoint("/manual-intervention-websocket");  //socket registration endpoint
+		registry.addEndpoint("/manual-intervention-websocket"); // socket registration endpoint
 	}
 
 }

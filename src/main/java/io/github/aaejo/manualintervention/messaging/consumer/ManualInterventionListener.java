@@ -13,8 +13,6 @@ import lombok.extern.slf4j.Slf4j;
 @KafkaListener(id = "manual-intervention", topics = "manual-intervention")
 public class ManualInterventionListener {
 
-
-
     private final SimpMessagingTemplate simpMessagingTemplate;
 
     public ManualInterventionListener(SimpMessagingTemplate simpMessagingTemplate) {
@@ -23,12 +21,7 @@ public class ManualInterventionListener {
 
     @KafkaHandler
     public void handle(IncompleteScrape incompleteScrape) {
-        //System.out.println("kafkaMessage: " + incompleteScrape.toString());
-        log.info(incompleteScrape.toString());
+        log.debug("Received incomplete scrape {}", incompleteScrape);
         simpMessagingTemplate.convertAndSend("/data/incompleteScrape", incompleteScrape);
-
-        
     }
 }
-
-
