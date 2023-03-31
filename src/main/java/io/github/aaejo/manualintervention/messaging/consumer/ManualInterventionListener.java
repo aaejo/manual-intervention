@@ -8,6 +8,10 @@ import org.springframework.stereotype.Component;
 import io.github.aaejo.messaging.records.IncompleteScrape;
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * @author Omri Harary
+ * @author Aidan Richards
+ */
 @Slf4j
 @Component
 @KafkaListener(id = "manual-intervention", topics = "manual-intervention")

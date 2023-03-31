@@ -9,6 +9,8 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * CompletedScrapeController
+ * 
+ * @author Aidan Richards
  */
 @Controller
 @Slf4j
